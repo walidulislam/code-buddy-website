@@ -1,8 +1,21 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import logoImg from "/logo.png";
+import { AuthContext } from "../contexts/AuthContext";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
+  const { user, logOutUser } = use(AuthContext);
+
+  const handelLogOut = () => {
+    logOutUser()
+      .then(() => {
+        toast.success("LogOut Successful..➜]");
+      })
+      .catch((e) => {
+        toast.error(e.message);
+      });
+  };
   return (
     <div>
       <div className="navbar bg-base-100 shadow-sm px-4 md:px-10 lg:px-20">
@@ -83,12 +96,42 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-2">
-          <a className="btn  bg-gradient-to-br from-[#632EE3] to-[#9F62F2] hover:from-[#ec612f] hover:to-[#f19736] text-white">
-            Login
-          </a>
-          <a className="btn  bg-gradient-to-br from-[#632EE3] to-[#9F62F2] hover:from-[#ec612f] hover:to-[#f19736] text-white">
-            Signup
-          </a>
+          {user ? (
+            <div className="flex items-center">
+              <div className="relative group">
+                <img
+                  className="h-12 w-12 mx-auto rounded-full border-gray-300 border-2 shadow-md shadow-purple-800 "
+                  src={
+                    user.photoURL || "https://avatar.iran.liara.run/public/3"
+                  }
+                />
+                <div className="absolute right-full top-1/2 -translate-y-1/2 mr-3 bg-gray-800 text-white text-md text-nowrap font-semibold px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-200 shadow-lg">
+                  {user.displayName}
+                </div>
+              </div>
+              <button
+                onClick={handelLogOut}
+                className="btn bg-gradient-to-br from-[#632EE3] to-[#9F62F2] hover:from-[#ec612f] hover:to-[#f19736] text-white ml-3"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <>
+              <Link
+                to="/login"
+                className="btn  bg-gradient-to-br from-[#632EE3] to-[#9F62F2] hover:from-[#ec612f] hover:to-[#f19736] text-white"
+              >
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                className="btn  bg-gradient-to-br from-[#632EE3] to-[#9F62F2] hover:from-[#ec612f] hover:to-[#f19736] text-white"
+              >
+                Signup
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>
