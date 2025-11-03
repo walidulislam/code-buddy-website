@@ -10,13 +10,14 @@ const Login = () => {
   const emailRef = useRef();
   const location = useLocation();
   const navigate = useNavigate();
-  const { logInUser, logInGoogle } = use(AuthContext);
+  const { setLoading, logInUser, logInGoogle } = use(AuthContext);
   const handelLogIn = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     logInUser(email, password)
       .then(() => {
+        setLoading(false);
         toast.success("Login Successful..🌸");
         e.target.reset();
         navigate(location.state || "/");
@@ -28,6 +29,7 @@ const Login = () => {
   const handelGoogleLogIn = () => {
     logInGoogle()
       .then(() => {
+        setLoading(false);
         toast.success("Login Successful..🌸");
         navigate(location.state || "/");
       })

@@ -3,9 +3,10 @@ import { Link, NavLink } from "react-router";
 import logoImg from "/logo.png";
 import { AuthContext } from "../contexts/AuthContext";
 import toast from "react-hot-toast";
+import { PropagateLoader } from "react-spinners";
 
 const Navbar = () => {
-  const { user, logOutUser } = use(AuthContext);
+  const { user, loading, logOutUser } = use(AuthContext);
 
   const handelLogOut = () => {
     logOutUser()
@@ -40,7 +41,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-35 p-2 space-y-1 shadow font-semibold"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-35 p-2 space-y-1 shadow font-semibold"
             >
               <li>
                 <NavLink
@@ -54,7 +55,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/"
+                  to="/profile"
                   className={({ isActive }) =>
                     isActive ? "text-blue-500 border-1 border-blue-200" : ""
                   }
@@ -96,17 +97,19 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-2">
-          {user ? (
+          {loading ? (
+            <PropagateLoader color="#9F62F2" />
+          ) : user ? (
             <div className="flex items-center">
               <div className="relative group">
                 <img
                   className="h-12 w-12 mx-auto rounded-full border-gray-300 border-2 shadow-md shadow-purple-800 "
                   src={
-                    user.photoURL || "https://avatar.iran.liara.run/public/3"
+                    user?.photoURL || "https://avatar.iran.liara.run/public/3"
                   }
                 />
                 <div className="absolute right-full top-1/2 -translate-y-1/2 mr-3 bg-gray-800 text-white text-md text-nowrap font-semibold px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-200 shadow-lg">
-                  {user.displayName}
+                  {user?.displayName}
                 </div>
               </div>
               <button

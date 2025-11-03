@@ -9,7 +9,7 @@ import { updateProfile } from "firebase/auth";
 const Signup = () => {
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
-  const { createUser } = use(AuthContext);
+  const { setLoading, createUser } = use(AuthContext);
   const handelSignup = (e) => {
     e.preventDefault();
     const displayName = e.target.name.value;
@@ -38,6 +38,7 @@ const Signup = () => {
           photoURL,
         })
           .then(() => {
+            setLoading(false);
             toast.success("Registration Successful..🌸");
             e.target.reset();
             navigate("/");
