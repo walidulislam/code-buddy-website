@@ -1,0 +1,74 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Introduction to HTML & CSS",
+    "providerName": "Rafiq Ahmed",
+    "providerEmail": "rafiq@skillswap.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Learn the basics of web development using HTML and CSS. Build your first website from scratch.",
+    "image": "https://i.ibb.co.com/C4h5wDn/html-css.jpg",
+    "category": "Web Development"
+  },
+  {
+    "skillId": 2,
+    "skillName": "JavaScript Fundamentals",
+    "providerName": "Nabila Khan",
+    "providerEmail": "nabila@skillswap.com",
+    "price": 20,
+    "rating": 4.9,
+    "slotsAvailable": 3,
+    "description": "Understand core JavaScript concepts and start creating dynamic websites and web apps.",
+    "image": "https://i.ibb.co.com/vCtDH6bn/java-script.jpg",
+    "category": "Programming"
+  },
+  {
+    "skillId": 3,
+    "skillName": "React.js for Beginners",
+    "providerName": "Fahim Islam",
+    "providerEmail": "fahim@skillswap.com",
+    "price": 25,
+    "rating": 4.8,
+    "slotsAvailable": 5,
+    "description": "Get hands-on experience building interactive UIs with React.js and learn component-based development.",
+    "image": "https://i.ibb.co.com/ZRwx4Myx/react.jpg",
+    "category": "Web Development"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Python Programming Basics",
+    "providerName": "Tahmina Akter",
+    "providerEmail": "tahmina@skillswap.com",
+    "price": 18,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Learn Python from scratch, including data types, loops, functions, and basic scripting.",
+    "image": "https://i.ibb.co.com/p6Szdvd0/python.jpg",
+    "category": "Programming"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Introduction to Node.js",
+    "providerName": "Samia Rahman",
+    "providerEmail": "samia@skillswap.com",
+    "price": 22,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Learn how to build backend applications using Node.js, handle requests, and work with databases.",
+    "image": "https://i.ibb.co.com/7NjfpJpv/node-js.jpg",
+    "category": "Web Development"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Git & GitHub Essentials",
+    "providerName": "Arif Chowdhury",
+    "providerEmail": "arif@skillswap.com",
+    "price": 12,
+    "rating": 4.5,
+    "slotsAvailable": 5,
+    "description": "Learn version control using Git and GitHub to manage your coding projects efficiently.",
+    "image": "https://i.ibb.co.com/bRWHg4Yh/github.jpg",
+    "category": "Programming Tools"
+  }
+]

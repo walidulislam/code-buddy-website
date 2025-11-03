@@ -10,22 +10,23 @@ export const router = createBrowserRouter([
     path: "/",
     element: <MainLayout></MainLayout>,
     children: [
-        {
-            index: true,
-            Component: Home,
-        },
-        {
-          path: "/profile",
-          Component: Profile,
-        },
-        {
-          path: "/login",
-          Component: Login,
-        },
-        {
-          path: "/signup",
-          Component: Signup,
-        },
+      {
+        index: true,
+        loader: () => fetch("skillData.json"),
+        Component: Home,
+      },
+      {
+        path: "/profile",
+        Component: Profile,
+      },
+      {
+        path: "/login",
+        Component: Login,
+      },
+      {
+        path: "/signup",
+        Component: Signup,
+      },
     ],
   },
 ]);
