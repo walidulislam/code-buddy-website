@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import SkillDetails from "../pages/SkillDetails";
 import PrivateRoutes from "./PrivateRoutes";
+import Forget from "../pages/Forget";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: "/signup",
         Component: Signup,
+      },
+      {
+        path: "/forget",
+        Component: Forget,
       },
       {
         path: "/details/:skillId",

@@ -37,6 +37,10 @@ const Login = () => {
         toast.error(err.message);
       });
   };
+  const handleForgetPassword = () => {
+    const email = emailRef.current.value;
+    navigate("/forget", {state: {email}});
+  };
   return (
     <div className="min-h-[calc(100vh-20px)] flex items-center justify-center bg-gradient-to-br from-purple-900 via-indigo-800 to-purple-800 relative overflow-hidden">
       <div className="w-full max-w-md backdrop-blur-lg bg-white/10 border border-white/20 shadow-2xl rounded-2xl p-8">
@@ -71,7 +75,11 @@ const Login = () => {
               {show ? <FaEye></FaEye> : <IoEyeOff></IoEyeOff>}
             </span>
           </div>
-          <button className="hover:underline cursor-pointer" type="button">
+          <button
+            onClick={handleForgetPassword}
+            className="hover:underline cursor-pointer"
+            type="button"
+          >
             Forget password?
           </button>
 
