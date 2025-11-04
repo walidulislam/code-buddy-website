@@ -3,9 +3,11 @@ import { AiOutlineUser } from "react-icons/ai";
 import { AiFillStar } from "react-icons/ai";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import useSkill from "../useSkill/useSkill";
 
-const TopProviders = ({ data }) => {
-  const top3Provides = [...data]
+const TopProviders = () => {
+  const { skills } = useSkill();
+  const top3Provides = [...skills]
     .sort((a, b) => b.rating - a.rating)
     .slice(0, 3);
   useEffect(() => {

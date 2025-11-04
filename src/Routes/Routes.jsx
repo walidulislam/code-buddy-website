@@ -4,11 +4,14 @@ import Home from "../pages/Home";
 import Profile from "../pages/Profile";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
+import SkillDetails from "../pages/SkillDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    // errorElement: <h2>404Error</h2>,
     children: [
       {
         index: true,
@@ -26,6 +29,15 @@ export const router = createBrowserRouter([
       {
         path: "/signup",
         Component: Signup,
+      },
+      {
+        path: "/details/:skillId",
+        // loader: () => fetch("skillData.json").then((res) => res.json()),
+        element: (
+          <PrivateRoutes>
+            <SkillDetails></SkillDetails>
+          </PrivateRoutes>
+        ),
       },
     ],
   },

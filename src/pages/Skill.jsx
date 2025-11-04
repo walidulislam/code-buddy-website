@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router";
 
 const Skill = ({ singleSkill }) => {
-  const { image, skillName, rating, price } = singleSkill;
+  const { skillId, image, skillName, rating, price } = singleSkill;
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
@@ -32,9 +33,12 @@ const Skill = ({ singleSkill }) => {
             </div>
           </div>
           <div className="card-actions flex justify-center items-center">
-            <button className="btn bg-gradient-to-r from-[#6fa391]  to-[#106b57] text-white border-none rounded-lg hover:scale-105 transition-transform duration-200 ">
+            <Link
+              to={`/details/${skillId}`}
+              className="btn bg-gradient-to-r from-[#6fa391]  to-[#106b57] text-white border-none rounded-lg hover:scale-105 transition-transform duration-200 "
+            >
               View Details
-            </button>
+            </Link>
           </div>
         </div>
       </div>
