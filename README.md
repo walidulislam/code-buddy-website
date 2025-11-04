@@ -1,16 +1,34 @@
-# React + Vite
+## Project Name: CodeBuddy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CodeBuddy is a simple learning website for students who want to learn web development. It provides an easy and clean interface to explore coding lessons and improve skills.
 
-Currently, two official plugins are available:
+## Purpose
+The purpose of this project is to create a learning platform where users can study web development and practice coding.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live URL
+https://code-buddy-learning-website.netlify.app/
 
-## React Compiler
+## Key Features
+- Responsive design  
+- Learning sections for different topics
+- Skills Details  
+- Testimonials from learners  
+- Smooth animations  
+- Simple navigation  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## NPM Packages Used
+- react    
+- tailwindcss
+- dasiyui
+- react-router
+- swiper
+- animate.css
+- aos
+- react-icons
+- firebase
+- spinner
+- framer-motion  
+- react-hot-toast  
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Developer
+Developed by: Md. Walidul Islam  
