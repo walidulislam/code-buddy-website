@@ -4,6 +4,7 @@ import Skills from "./Skills";
 import { useLoaderData } from "react-router";
 import TopProviders from "../component/TopProviders";
 import Works from "../component/Works";
+import Testimonials from "../component/Testimonials";
 
 const Home = () => {
   const data = useLoaderData();
@@ -13,6 +14,7 @@ const Home = () => {
       <Skills data={data}></Skills>
       <TopProviders data={data}></TopProviders>
       <Works></Works>
+      <Testimonials></Testimonials>
     </div>
   );
 };
