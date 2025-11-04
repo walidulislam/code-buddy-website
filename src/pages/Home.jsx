@@ -3,6 +3,7 @@ import Hero from "../component/Hero";
 import Skills from "./Skills";
 import { useLoaderData } from "react-router";
 import TopProviders from "../component/TopProviders";
+import Works from "../component/Works";
 
 const Home = () => {
   const data = useLoaderData();
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero></Hero>
       <Skills data={data}></Skills>
       <TopProviders data={data}></TopProviders>
+      <Works></Works>
     </div>
   );
 };
